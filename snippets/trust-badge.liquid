@@ -1,0 +1,54 @@
+{% comment %}
+  Renders a trust badge section with icons and text.
+  This snippet is designed to be reusable across different sections of the theme.
+
+  Accepts:
+  - context: {String} A string to provide a unique class for styling purposes (e.g., 'product', 'cart').
+
+  Usage:
+  {% render 'trust-badge', context: 'product' %}
+{% endcomment %}
+
+{%- liquid
+  assign unique_class = 'trust-badge--' | append: context
+-%}
+
+<style>
+  .trust-badge-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.4rem;
+    color: #333;
+  }
+
+  .trust-badge .icon {
+    width: 24px;
+    height: 24px;
+  }
+</style>
+
+<div class="trust-badge-wrapper {{ unique_class }}">
+  <div class="trust-badge">
+    {% render 'icon-lock' %}
+    <span>Secure Checkout</span>
+  </div>
+  <div class="trust-badge">
+    {% render 'icon-truck' %}
+    <span>Free Shipping</span>
+  </div>
+  <div class="trust-badge">
+    {% render 'icon-return' %}
+    <span>Easy Returns</span>
+  </div>
+</div>

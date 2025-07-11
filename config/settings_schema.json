@@ -34,6 +34,17 @@
     ]
   },
   {
+    "name": "Trust Badges",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_trust_badges",
+        "default": true,
+        "label": "Enable Trust Badges"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
